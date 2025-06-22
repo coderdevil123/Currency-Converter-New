@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Exchange - Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Animated Background Elements -->
+        <div class="background-effects">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+
+        <!-- Grid Pattern Overlay -->
+        <div class="grid-overlay"></div>
+
+        <!-- Main Card -->
+        <div class="card">
+            <div class="card-gradient"></div>
+            
+            <!-- Header -->
+            <div class="card-header">
+                <h1 class="title">
+                    <div class="icon-container">
+                        <i class="fas fa-bolt icon"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    QUANTUM EXCHANGE
+                </h1>
+                <p class="subtitle">Neural Currency Conversion Matrix v2.1</p>
+                <div class="status">
+                    <i class="fas fa-activity status-icon"></i>
+                    <span class="status-text">SYSTEM ONLINE</span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="card-content">
+                <!-- Error Alert -->
+                <div id="error-alert" class="alert hidden">
+                    <span id="error-message"></span>
+                </div>
+
+                <!-- Amount Input -->
+                <div class="input-group">
+                    <label for="amount" class="label">Quantum Units</label>
+                    <div class="input-container">
+                        <input 
+                            type="number" 
+                            id="amount" 
+                            placeholder="Enter amount" 
+                            value="1" 
+                            min="0" 
+                            step="0.01"
+                            class="input amount-input"
+                        >
+                        <div class="input-gradient"></div>
+                    </div>
+                </div>
+
+                <!-- From Currency -->
+                <div class="input-group">
+                    <label for="from-currency" class="label cyan">Source Protocol</label>
+                    <select id="from-currency" class="select cyan">
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="KRW">KRW - South Korean Won</option>
+                        <option value="MXN">MXN - Mexican Peso</option>
+                        <option value="SGD">SGD - Singapore Dollar</option>
+                        <option value="NZD">NZD - New Zealand Dollar</option>
+                        <option value="NOK">NOK - Norwegian Krone</option>
+                        <option value="SEK">SEK - Swedish Krona</option>
+                    </select>
+                </div>
+
+                <!-- Swap Button -->
+                <div class="swap-container">
+                    <button id="swap-btn" class="swap-button">
+                        <i class="fas fa-exchange-alt swap-icon"></i>
+                        <div class="button-glow"></div>
+                    </button>
+                </div>
+
+                <!-- To Currency -->
+                <div class="input-group">
+                    <label for="to-currency" class="label purple">Target Protocol</label>
+                    <select id="to-currency" class="select purple">
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR" selected>EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="KRW">KRW - South Korean Won</option>
+                        <option value="MXN">MXN - Mexican Peso</option>
+                        <option value="SGD">SGD - Singapore Dollar</option>
+                        <option value="NZD">NZD - New Zealand Dollar</option>
+                        <option value="NOK">NOK - Norwegian Krone</option>
+                        <option value="SEK">SEK - Swedish Krona</option>
+                    </select>
+                </div>
+
+                <!-- Convert Button -->
+                <button id="convert-btn" class="convert-button">
+                    <i class="fas fa-globe button-icon"></i>
+                    <span class="button-text">Initialize Conversion</span>
+                    <div class="button-slide"></div>
+                </button>
+
+                <!-- Loading State -->
+                <div id="loading" class="loading hidden">
+                    <i class="fas fa-spinner loading-icon"></i>
+                    <span>Accessing Quantum Matrix...</span>
+                </div>
+
+                <!-- Result -->
+                <div id="result" class="result hidden">
+                    <div class="result-gradient"></div>
+                    <div class="result-content">
+                        <div class="result-label">
+                            <span id="result-from"></span> converts to
+                        </div>
+                        <div class="result-amount" id="result-value"></div>
+                        <div class="result-rate" id="result-rate"></div>
+                        <div class="result-divider"></div>
+                    </div>
+                </div>
+
+                <!-- Last Updated -->
+                <div id="last-updated" class="last-updated hidden">
+                    <span class="status-dot">●</span> 
+                    Matrix last synchronized: <span id="update-time"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
